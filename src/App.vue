@@ -1,17 +1,34 @@
-<script>
-export default {
-  watch: {
-      $route(to) {
-        document.title = to.meta.title;
-      },
-    },
-}
-</script>
-
 <template>
-  <RouterView />
+  <metainfo>
+      <template v-slot:title="{ content }">
+          {{ content ? `${content} | ${siteName}` : siteName }}
+      </template>
+  </metainfo>
+  <router-view />
 </template>
 
+<script>
+export default {
+  name: 'App',  
+  data(){
+    return {
+      siteName: "Vue Meta Tag Sample",
+    }
+  },  
+  metaInfo() {
+      return { 
+          title: "Home",
+          meta: [
+              { name: 'description', content:  'This is the homepage for a sample site that demonstrates how to add custom meta tags to individual pages.'},
+              { property: 'og:title', content: "Vue Meta Tag Sample"},
+              { property: 'og:site_name', content: 'Vue Meta Tag'},
+              {property: 'og:type', content: 'website'},    
+              {name: 'robots', content: 'index,follow'} 
+          ]
+      }
+  }
+}
+</script>
 <style scoped>
 header {
   line-height: 1.5;

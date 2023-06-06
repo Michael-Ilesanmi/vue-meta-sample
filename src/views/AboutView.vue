@@ -8,5 +8,23 @@
   </div>
 </template>
 
+<script>
+export default {
+  metaInfo() {
+    return {
+      title: 'About',
+      meta: [
+          { name: 'description', content:  'This is the about page for a sample site that demonstrates how to add custom meta tags to individual pages.'},
+          { property: 'og:title', content: "About Sample"},
+          { property: 'og:site_name', content: 'Vue Meta Tag'},
+          {property: 'og:type', content: 'website'},    
+          {name: 'robots', content: 'index,follow'} 
+      ]
+    }
+  }
+}
+</script>
+
+
 <style>
 </style>
