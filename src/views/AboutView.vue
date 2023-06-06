@@ -9,9 +9,10 @@
 </template>
 
 <script>
+import { useMeta } from 'vue-meta'
 export default {
-  metaInfo() {
-    return {
+  setup () {
+    const { meta } = useMeta({
       title: 'About',
       meta: [
           { name: 'description', content:  'This is the about page for a sample site that demonstrates how to add custom meta tags to individual pages.'},
@@ -20,7 +21,7 @@ export default {
           {property: 'og:type', content: 'website'},    
           {name: 'robots', content: 'index,follow'} 
       ]
-    }
+    })
   }
 }
 </script>

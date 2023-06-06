@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { useMeta } from 'vue-meta'
 export default {
   name: 'App',  
   data(){
@@ -15,17 +16,17 @@ export default {
       siteName: "Vue Meta Tag Sample",
     }
   },  
-  metaInfo() {
-      return { 
-          title: "Home",
-          meta: [
+  setup () {
+    const { meta } = useMeta({
+      title: 'Home',
+      meta: [
               { name: 'description', content:  'This is the homepage for a sample site that demonstrates how to add custom meta tags to individual pages.'},
               { property: 'og:title', content: "Vue Meta Tag Sample"},
               { property: 'og:site_name', content: 'Vue Meta Tag'},
               {property: 'og:type', content: 'website'},    
               {name: 'robots', content: 'index,follow'} 
           ]
-      }
+    })
   }
 }
 </script>
