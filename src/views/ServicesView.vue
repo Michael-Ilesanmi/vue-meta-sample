@@ -9,20 +9,21 @@
 </template>
 
 <script>
-import { useMeta } from 'vue-meta'
+import { useHead } from 'unhead'
 export default {
-  setup () {
-    const { meta } = useMeta({
-      title: 'Services',
+  name: 'App',  
+  setup() {
+    useHead({
+      title: "SERVICES",
       meta: [
-          { name: 'description', content:  'This is the services page for a sample site that demonstrates how to add custom meta tags to individual pages.'},
-          { property: 'og:title', content: "Services Sample"},
-          { property: 'og:site_name', content: 'Vue Meta Tag'},
-          {property: 'og:type', content: 'website'},    
-          {name: 'robots', content: 'index,follow'} 
-      ]
+        {
+          name: `description`,
+          content: `This is the services page for a sample site that demonstrates how to add custom meta tags to individual pages.`,
+        },
+        ],
+     
     })
-  }
+  },
 }
 </script> 
 <style>

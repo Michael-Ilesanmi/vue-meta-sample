@@ -8,11 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "unhead": "^1.1.27",
     "vue": "^3.3.2",
-    "vue-meta": "^3.0.0-alpha.2",
     "vue-router": "^4.2.0"
   },
   "devDependencies": {
+    "@unhead/addons": "^1.1.27",
     "@vitejs/plugin-vue": "^4.2.3",
     "vite": "^4.3.5"
   }
